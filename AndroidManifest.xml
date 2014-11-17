@@ -1990,6 +1990,14 @@
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
                 android:resource="@id/notification_settings" />
         </activity>
+		
+        <!-- Validus Extra info -->
+        <activity android:name="com.android.settings.validus.extrainfo.MainActivity"
+                  android:theme="@android:style/Theme.Material.Light.Dialog.NoActionBar.MinWidth">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
 
         <!-- Show apps for which application-level notification settings are applicable -->
         <activity android:name="Settings$NotificationAppListActivity"
