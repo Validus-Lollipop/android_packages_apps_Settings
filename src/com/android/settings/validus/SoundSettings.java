@@ -33,8 +33,10 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String TAG = "SoundSettings";
 
     private static final String PREF_LESS_NOTIFICATION_SOUNDS = "less_notification_sounds";
-
+	private static final String KEY_VOL_MEDIA = "volume_keys_control_media_stream";
+	
     private ListPreference mAnnoyingNotifications;
+	private SwitchPreference mVolumeKeysControlMedia;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,10 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mAnnoyingNotifications.setValue(Integer.toString(notificationThreshold));
         mAnnoyingNotifications.setOnPreferenceChangeListener(this);
 
+        mVolumeKeysControlMedia = (SwitchPreference) findPreference(KEY_VOL_MEDIA);
+        mVolumeKeysControlMedia.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.VOLUME_KEYS_CONTROL_MEDIA_STREAM, 0) != 0);
+        mVolumeKeysControlMedia.setOnPreferenceChangeListener(this);		
     }
 
     @Override
@@ -69,6 +75,11 @@ public class SoundSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD, val);
         }
+        if (KEY_VOL_MEDIA.equals(key)) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.VOLUME_KEYS_CONTROL_MEDIA_STREAM,
+                    (Boolean) objValue ? 1 : 0);
+        }		
         return true;
     }
 }
