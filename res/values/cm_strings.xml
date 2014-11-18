@@ -230,4 +230,8 @@
     <string name="no_filters_title">No filters set</string>
     <string name="app_ops_ignored_count">Denied <xliff:g id="count" example="2 times">%s</xliff:g></string>
 
+    <!-- Status bar Settings -->
+    <string name="status_bar_prefs_title">Status bar</string>
+    <string name="keywords_status_bar">status bar drawer icons</string>
+
 </resources>
