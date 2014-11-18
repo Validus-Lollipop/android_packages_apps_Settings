@@ -139,7 +139,7 @@
         <Preference android:key="validus_version"
                 style="?android:preferenceInformationStyle"
                 android:title="@string/validus_version_title"
-                android:summary="@string/liquid_version_default"
+                android:summary="@string/validus_version_default"
                 android:selectable="false" />
 				
         <!-- Build date -->
