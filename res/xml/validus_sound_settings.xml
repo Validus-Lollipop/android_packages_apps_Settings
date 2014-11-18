@@ -18,6 +18,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/sound_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+	
+    <SwitchPreference
+        android:key="safe_headset_volume"
+        android:title="@string/safe_headset_volume_title"
+        android:summary="@string/safe_headset_volume_summary"
+        android:persistent="false"
+        android:defaultValue="true" />
 
     <PreferenceCategory
         android:title="@string/notifications_category_title" />
