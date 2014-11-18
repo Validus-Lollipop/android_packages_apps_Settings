@@ -144,6 +144,9 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private static final String SELECT_LOGD_SIZE_KEY = "select_logd_size";
     private static final String SELECT_LOGD_SIZE_PROPERTY = "persist.logd.size";
     private static final String SELECT_LOGD_DEFAULT_SIZE_PROPERTY = "ro.logd.size";
+	
+    private static final String ROOT_ACCESS_KEY = "root_access";
+    public static final String ROOT_ACCESS_PROPERTY = "persist.sys.root_access";
 
     private static final String OPENGL_TRACES_KEY = "enable_opengl_traces";
 
@@ -225,7 +228,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private ListPreference mAnimatorDurationScale;
     private ListPreference mOverlayDisplayDevices;
     private ListPreference mOpenGLTraces;
-
     private ListPreference mSimulateColorSpace;
 
     private CheckBoxPreference mUseNuplayer;
@@ -235,6 +237,9 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private ListPreference mAppProcessLimit;
 
     private CheckBoxPreference mShowAllANRs;
+	
+    private ListPreference mRootAccess;
+    private Object mSelectedRootValue;
 
     private PreferenceScreen mProcessStats;
     private ListPreference mRootAccess;
@@ -252,6 +257,8 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private Dialog mAdbDialog;
 
     private Dialog mAdbKeysDialog;
+	private Dialog mRootDialog;	
+	
     private boolean mUnavailable;
     private Dialog mRootDialog;
 
@@ -384,6 +391,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         if (!removeRootOptionsIfRequired()) {
             mAllPrefs.add(mRootAccess);
         }
+		
     }
 
     private ListPreference addListPreference(String prefKey) {
