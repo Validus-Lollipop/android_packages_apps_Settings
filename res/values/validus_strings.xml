@@ -15,6 +15,13 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- General strings -->
+    <string name="ok">OK</string>
+    <string name="reset">Reset</string>
+    <string name="attention">Attention</string>
+    <string name="enabled">Enabled</string>
+    <string name="default_string">Default</string>
+
     <!-- Validus Extra Info -->
     <string name="vextrainfo">Extra information</string>
     <string name="vextrainfo_summary">Display extra info for cpu, display, etc</string>
