@@ -150,9 +150,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
 
     private static final String OPENGL_TRACES_KEY = "enable_opengl_traces";
 
-    private static final String ROOT_ACCESS_KEY = "root_access";
-    private static final String ROOT_ACCESS_PROPERTY = "persist.sys.root_access";
-
     private static final String IMMEDIATELY_DESTROY_ACTIVITIES_KEY
             = "immediately_destroy_activities";
     private static final String APP_PROCESS_LIMIT_KEY = "app_process_limit";
@@ -242,8 +239,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private Object mSelectedRootValue;
 
     private PreferenceScreen mProcessStats;
-    private ListPreference mRootAccess;
-    private Object mSelectedRootValue;
 
     private final ArrayList<Preference> mAllPrefs = new ArrayList<Preference>();
 
@@ -260,7 +255,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
 	private Dialog mRootDialog;	
 	
     private boolean mUnavailable;
-    private Dialog mRootDialog;
 
     @Override
     public void onCreate(Bundle icicle) {
