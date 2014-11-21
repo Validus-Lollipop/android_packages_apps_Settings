@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2014 The Android Open Source Project
-
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
-
           http://www.apache.org/licenses/LICENSE-2.0
-
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -36,6 +33,14 @@
                 android:title="@string/bluetooth_settings_title"
                 android:fragment="com.android.settings.bluetooth.BluetoothSettings"
                 android:icon="@drawable/ic_settings_bluetooth2"
+                />
+
+        <!-- Location -->
+        <dashboard-tile
+                android:id="@+id/location_settings"
+                android:title="@string/location_settings_title"
+                android:fragment="com.android.settings.location.LocationSettings"
+                android:icon="@drawable/ic_settings_location"
                 />
 
         <!-- SIM Cards -->
@@ -70,37 +75,19 @@
                 />
 
     </dashboard-category>
-	
-    <!-- SuperSU -->
-    <header
-        android:id="@+id/supersu_settings"
-        android:icon="@drawable/ic_settings_supersu"
-        android:title="@string/supersu_title">
-        <intent
-            android:action="android.intent.action.MAIN"
-            android:targetPackage="eu.chainfire.supersu"
-            android:targetClass="eu.chainfire.supersu.MainActivity" />
-    </header>
 
     <!-- DEVICE -->
     <dashboard-category
             android:id="@+id/device_section"
             android:title="@string/header_category_device" >
-
-        <dashboard-tile
-                android:id="@+id/button_settings"
-                android:title="@string/button_pref_title"
-                android:fragment="com.android.settings.ButtonSettings"
-                android:icon="@drawable/ic_settings_home"
-                />
-				
+							
         <!-- Validus -->
         <dashboard-tile
                 android:id="@+id/main_settings"
                 android:title="@string/validus_settings_title"
                 android:fragment="com.android.settings.validus.MainSettings"
                 android:icon="@drawable/ic_the_void_settings"
-                />
+                />			
 
         <!-- Home -->
         <dashboard-tile
@@ -109,7 +96,7 @@
                 android:fragment="com.android.settings.HomeSettings"
                 android:icon="@drawable/ic_settings_home"
                 />
-		
+
         <!-- Display -->
         <dashboard-tile
                 android:id="@+id/display_settings"
@@ -142,12 +129,59 @@
                 android:icon="@drawable/ic_settings_battery"
                 />
 
+        <!-- Date & Time -->
+        <dashboard-tile
+                android:id="@+id/date_time_settings"
+                android:title="@string/date_and_time_settings_title"
+                android:fragment="com.android.settings.DateTimeSettings"
+                android:icon="@drawable/ic_settings_date_time"
+                />
+
+        <!-- Backup and reset -->
+        <dashboard-tile
+                android:id="@+id/privacy_settings"
+                android:title="@string/privacy_settings"
+                android:fragment="com.android.settings.PrivacySettings"
+                android:icon="@drawable/ic_settings_backup"
+                />
+
+        <!-- Account -->
+        <dashboard-tile
+                android:id="@+id/account_settings"
+                android:title="@string/account_settings_title"
+                android:fragment="com.android.settings.accounts.AccountSettings"
+                android:icon="@drawable/ic_settings_accounts"
+                />
+
+    </dashboard-category>
+
+    <!-- System -->
+    <dashboard-category
+            android:id="@+id/personal_section"
+            android:title="@string/header_category_personal" >
+
+        <!-- Language -->
+        <dashboard-tile
+                android:id="@+id/language_settings"
+                android:title="@string/language_settings"
+                android:fragment="com.android.settings.inputmethod.InputMethodAndLanguageSettings"
+                android:icon="@drawable/ic_settings_language"
+                />
+
         <!-- Application Settings -->
         <dashboard-tile
                 android:id="@+id/application_settings"
                 android:title="@string/applications_settings"
                 android:fragment="com.android.settings.applications.ManageApplications"
                 android:icon="@drawable/ic_settings_applications"
+                />
+
+        <!-- Security -->
+        <dashboard-tile
+                android:id="@+id/security_settings"
+                android:title="@string/security_settings_title"
+                android:fragment="com.android.settings.SecuritySettings"
+                android:icon="@drawable/ic_settings_security"
                 />
 
         <!-- Manage users -->
@@ -173,85 +207,6 @@
             <intent android:action="com.android.settings.MANUFACTURER_APPLICATION_SETTING" />
         </dashboard-tile>
 
-    </dashboard-category>
-
-    <!-- PERSONAL -->
-    <dashboard-category
-            android:id="@+id/personal_section"
-            android:title="@string/header_category_personal" >
-
-        <!-- Profiles -->
-        <dashboard-tile
-                android:id="@+id/profile_settings"
-                android:fragment="com.android.settings.profiles.ProfilesSettings"
-                android:title="@string/profiles_settings_title"
-                android:icon="@drawable/ic_settings_location"
-                />
-
-        <!-- Location -->
-        <dashboard-tile
-                android:id="@+id/location_settings"
-                android:title="@string/location_settings_title"
-                android:fragment="com.android.settings.location.LocationSettings"
-                android:icon="@drawable/ic_settings_location"
-                />
-
-        <!-- Security -->
-        <dashboard-tile
-                android:id="@+id/security_settings"
-                android:title="@string/security_settings_title"
-                android:fragment="com.android.settings.SecuritySettings"
-                android:icon="@drawable/ic_settings_security"
-                />
-
-        <!-- CyanogenMod Privacy Settings -->
-        <!-- This is the 'real' Privacy items and includes Privacy Guard, Blacklist & WhisperPush -->
-        <dashboard-tile
-                android:id="@+id/privacy_settings_cyanogenmod"
-                android:title="@string/privacy_settings_cyanogenmod_title"
-                android:fragment="com.android.settings.cyanogenmod.PrivacySettings"
-                android:icon="@drawable/ic_settings_privacy"
-                />
-
-        <!-- Account -->
-        <dashboard-tile
-                android:id="@+id/account_settings"
-                android:title="@string/account_settings_title"
-                android:fragment="com.android.settings.accounts.AccountSettings"
-                android:icon="@drawable/ic_settings_accounts"
-                />
-
-        <!-- Language -->
-        <dashboard-tile
-                android:id="@+id/language_settings"
-                android:title="@string/language_settings"
-                android:fragment="com.android.settings.inputmethod.InputMethodAndLanguageSettings"
-                android:icon="@drawable/ic_settings_language"
-                />
-
-        <!-- Backup and reset -->
-        <dashboard-tile
-                android:id="@+id/privacy_settings"
-                android:title="@string/privacy_settings"
-                android:fragment="com.android.settings.PrivacySettings"
-                android:icon="@drawable/ic_settings_backup"
-                />
-
-    </dashboard-category>
-
-    <!-- SYSTEM -->
-    <dashboard-category
-        android:id="@+id/system_section"
-        android:title="@string/header_category_system" >
-
-        <!-- Date & Time -->
-        <dashboard-tile
-                android:id="@+id/date_time_settings"
-                android:title="@string/date_and_time_settings_title"
-                android:fragment="com.android.settings.DateTimeSettings"
-                android:icon="@drawable/ic_settings_date_time"
-                />
-
         <!-- Accessibility feedback -->
         <dashboard-tile
                 android:id="@+id/accessibility_settings"
@@ -268,13 +223,12 @@
                 android:icon="@drawable/ic_settings_print"
                 />
 
-        <!-- Superuser -->
-        <dashboard-tile
-                android:id="@+id/superuser_settings"
-                android:title="@string/superuser"
-                android:fragment="com.android.settings.cyanogenmod.superuser.PolicyNativeFragment"
-                android:icon="@drawable/ic_action_permission"
-                />
+    </dashboard-category>
+
+    <!-- Advanced -->
+    <dashboard-category
+        android:id="@+id/system_section"
+        android:title="@string/header_category_system" >
 
         <!-- Development -->
         <dashboard-tile
@@ -283,6 +237,17 @@
                 android:fragment="com.android.settings.DevelopmentSettings"
                 android:icon="@drawable/ic_settings_development"
                 />
+				
+        <!-- SuperSU -->
+        <dashboard-tile
+            android:id="@+id/supersu_settings"
+            android:icon="@drawable/ic_settings_supersu"
+            android:title="@string/supersu_title">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="eu.chainfire.supersu"
+                android:targetClass="eu.chainfire.supersu.MainActivity" />
+        </dashboard-tile>
 
         <!-- About Device -->
         <dashboard-tile
