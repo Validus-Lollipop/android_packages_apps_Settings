@@ -237,8 +237,7 @@ public class SettingsActivity extends Activity
             R.id.nfc_payment_settings,
             R.id.home_settings,
             R.id.dashboard,
-			R.id.main_settings,
-            R.id.privacy_settings_cyanogenmod
+       	    R.id.main_settings,
     };
 
     private static final String[] ENTRY_FRAGMENTS = {
@@ -1204,12 +1203,6 @@ public class SettingsActivity extends Activity
                             UserManager.DISALLOW_DEBUGGING_FEATURES)) {
                         removeTile = true;
                     }			
-                } else if (id == R.id.button_settings) {
-                    boolean hasDeviceKeys = getResources().getInteger(
-                            com.android.internal.R.integer.config_deviceHardwareKeys) != 0;
-                    if (!hasDeviceKeys) {
-                        removeTile = true;
-                    }
                 }
 
                 if (UserHandle.MU_ENABLED && UserHandle.myUserId() != 0
