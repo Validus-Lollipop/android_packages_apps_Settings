@@ -373,7 +373,7 @@
     <string name="ime_switcher_notify_summary">Display input method selector notification</string>
 	
     <!-- Main settings -->
-    <string name="equalizer_settings_title">Equalizer</string>
+    <string name="equalizer_settings_title">Viper Sound</string>
     <string name="interface_settings_title">Interface</string>
     <string name="lockscreen_settings_title">Lock screen</string>
     <string name="navigation_settings_title">Navigation</string>

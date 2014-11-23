@@ -32,5 +32,16 @@
         android:title="@string/statusbar_settings_title"
         android:fragment="com.android.settings.validus.StatusBarSettings"
         android:icon="@drawable/ic_validus_statusbar" />
-
+		
+    <!-- Equalizer -->
+    <Preference
+        android:id="@+id/equalizer_settings"
+        android:title="@string/equalizer_settings_title"
+        android:icon="@drawable/ic_validus_equalizer" >
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.vipercn.viper4android_v2.activity.ViPER4Android"
+            android:targetPackage="com.vipercn.viper4android_v2" /> 
+    </Preference>
+	
 </PreferenceScreen>
