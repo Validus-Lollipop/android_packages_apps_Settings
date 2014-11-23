@@ -16,21 +16,14 @@
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/validus_settings_title" >
+    android:title="@string/interface_settings_title"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 	
-    <!-- Interface -->
-    <PreferenceScreen
-        android:id="@+id/interface_settings"
-        android:title="@string/interface_settings_title"
-        android:fragment="com.android.settings.validus.InterfaceSettings"
-        android:icon="@drawable/ic_validus_interface_teal" /> 
-	
-    <!-- Status bar -->
-    <PreferenceScreen
-        android:id="@+id/statusbar_settings"
-        android:title="@string/statusbar_settings_title"
-        android:fragment="com.android.settings.validus.StatusBarSettings"
-        android:icon="@drawable/ic_validus_statusbar" />
+    <!-- Density Changer -->
+	<PreferenceScreen
+        android:id="@+id/density_changer"
+        android:title="@string/lcd_density_title"
+        android:fragment="com.android.settings.validus.Density"
+		android:icon="@drawable/ic_dt_density" />	
 
 </PreferenceScreen>
