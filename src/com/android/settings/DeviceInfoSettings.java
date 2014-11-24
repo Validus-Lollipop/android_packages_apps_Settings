@@ -134,9 +134,10 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         }
 
         // Dont show feedback option if there is no reporter.
-        if (TextUtils.isEmpty(getFeedbackReporterPackage(getActivity()))) {
-            getPreferenceScreen().removePreference(findPreference(KEY_DEVICE_FEEDBACK));
-        }
+        Preference FEED_HER = findPreference(KEY_DEVICE_FEEDBACK); /*that's a human centipede reference, btw*/
+        if (FEED_HER != null && TextUtils.isEmpty(getFeedbackReporterPackage(getActivity()))) {
+            getPreferenceScreen().removePreference(FEED_HER);
+         }
 
         /*
          * Settings is a generic app and should not contain any device-specific
