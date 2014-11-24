@@ -19,19 +19,19 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/validus_settings_title" >
 	
+    <!-- Status bar -->
+    <PreferenceScreen
+        android:id="@+id/statusbar_settings"
+        android:title="@string/statusbar_settings_title"
+        android:fragment="com.android.settings.validus.StatusBarSettings"
+        android:icon="@drawable/ic_validus_statusbar" />	
+	
     <!-- Interface -->
     <PreferenceScreen
         android:id="@+id/interface_settings"
         android:title="@string/interface_settings_title"
         android:fragment="com.android.settings.validus.InterfaceSettings"
         android:icon="@drawable/ic_validus_interface_teal" /> 
-	
-    <!-- Status bar -->
-    <PreferenceScreen
-        android:id="@+id/statusbar_settings"
-        android:title="@string/statusbar_settings_title"
-        android:fragment="com.android.settings.validus.StatusBarSettings"
-        android:icon="@drawable/ic_validus_statusbar" />
 		
     <!-- Equalizer -->
     <Preference

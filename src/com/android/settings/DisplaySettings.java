@@ -56,6 +56,7 @@ import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.android.settings.validus.DisplayRotation;
 
@@ -80,7 +81,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_AUTO_BRIGHTNESS = "auto_brightness";
     private static final String KEY_AUTO_ROTATE = "auto_rotate";
 	private static final String KEY_NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
+	private static final String DISABLE_IMMERSIVE_MESSAGE = "disable_immersive_message";
     private static final String KEY_TAP_TO_WAKE = "double_tap_wake_gesture";
+	private static final String KEY_TOAST_ANIMATION = "toast_animation";
 
     private static final String CATEGORY_ADVANCED = "advanced_display_prefs";
 
@@ -104,6 +107,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private SwitchPreference mAutoBrightnessPreference;
 	private ListPreference mNavigationBarHeight;
     private SwitchPreference mTapToWake;
+	private ListPreference mToastAnimation;
+	private SwitchPreference mDisableIM;
 
     private ContentObserver mAccelerometerRotationObserver =
             new ContentObserver(new Handler()) {
@@ -143,7 +148,17 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 Settings.System.NAVIGATION_BAR_HEIGHT, 48);
         mNavigationBarHeight.setValue(String.valueOf(statusNavigationBarHeight));
         mNavigationBarHeight.setSummary(mNavigationBarHeight.getEntry());
-
+        mToastAnimation = (ListPreference) prefSet.findPreference(KEY_TOAST_ANIMATION);
+        mToastAnimation.setSummary(mToastAnimation.getEntry());
+        int CurrentToastAnimation = Settings.System.getInt(
+                getContentResolver(),Settings.System.TOAST_ANIMATION, 1);
+        mToastAnimation.setValueIndex(CurrentToastAnimation);
+        mToastAnimation.setOnPreferenceChangeListener(this);
+		
+        mDisableIM = (SwitchPreference) findPreference(DISABLE_IMMERSIVE_MESSAGE);
+        mDisableIM.setChecked((Settings.System.getInt(resolver,
+                Settings.System.DISABLE_IMMERSIVE_MESSAGE, 0) == 1));
+		
         mFontSizePref = (WarnedListPreference) findPreference(KEY_FONT_SIZE);
         mFontSizePref.setOnPreferenceChangeListener(this);
         mFontSizePref.setOnPreferenceClickListener(this);
@@ -434,7 +449,13 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mTapToWake) {
+        if  (preference == mDisableIM) {
+            boolean checked = ((SwitchPreference)preference).isChecked();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.DISABLE_IMMERSIVE_MESSAGE, checked ? 1:0);
+            return true;
+        }
+		if (preference == mTapToWake) {
             return TapToWake.setEnabled(mTapToWake.isChecked());
         }
 
@@ -475,6 +496,14 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_HEIGHT, statusNavigationBarHeight);
             mNavigationBarHeight.setSummary(mNavigationBarHeight.getEntries()[index]);
+        }		
+        if (KEY_TOAST_ANIMATION.equals(key)) {
+            int index = mToastAnimation.findIndexOfValue((String) objValue);
+            Settings.System.putString(getContentResolver(),
+                    Settings.System.TOAST_ANIMATION, (String) objValue);
+            mToastAnimation.setSummary(mToastAnimation.getEntries()[index]);
+            Toast.makeText(getActivity(), "Toast animation test!!!",
+                    Toast.LENGTH_SHORT).show();
         }		
         return true;
     }
