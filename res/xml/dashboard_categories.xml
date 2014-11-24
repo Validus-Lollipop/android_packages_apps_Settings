@@ -89,13 +89,6 @@
                 android:icon="@drawable/ic_the_void_settings"
                 />		
 				
-        <dashboard-tile
-                android:id="@+id/button_settings"
-                android:title="@string/button_pref_title"
-                android:fragment="com.android.settings.ButtonSettings"
-                android:icon="@drawable/ic_settings_home"
-                />
-				
         <!-- Home -->
         <dashboard-tile
                 android:id="@+id/home_settings"
@@ -111,6 +104,14 @@
                 android:fragment="com.android.settings.DisplaySettings"
                 android:icon="@drawable/ic_settings_display"
                 />
+	
+		<!-- Hardware Key Options -->
+       <dashboard-tile
+                android:id="@+id/button_settings"
+                android:title="@string/button_pref_title"
+                android:fragment="com.android.settings.ButtonSettings"
+                android:icon="@drawable/ic_settings_buttons"
+                />				
 
         <!-- Notifications -->
         <dashboard-tile
