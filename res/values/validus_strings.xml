@@ -16,7 +16,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
      <!-- Validus Settings Strings -->
-    <string name="display_category_liquid_options_title">Validus Options</string>
+    <string name="display_category_validus_options_title">Validus Options</string>
 	<string name="category_general_title">General Options</string>
 
     <!-- [CHAR LIMIT=NONE] Device Info screen. Countdown for user taps to enable development settings -->
