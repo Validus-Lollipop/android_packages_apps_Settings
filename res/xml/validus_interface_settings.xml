@@ -26,4 +26,10 @@
         android:fragment="com.android.settings.validus.Density"
 		android:icon="@drawable/ic_dt_density" />	
 		
+    <PreferenceScreen
+        android:id="@+id/animations"
+        android:title="@string/title_animation_controls"
+        android:summary="@string/header_summary_animation"
+        android:fragment="com.android.settings.validus.fragments.AnimationControls" />
+		
 </PreferenceScreen>
