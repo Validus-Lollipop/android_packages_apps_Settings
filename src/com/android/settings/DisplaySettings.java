@@ -452,12 +452,12 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if  (preference == mDisableIM) {
-            boolean checked = ((SwitchPreference)preference).isChecked();
+            boolean checked = ((CheckBoxPreference)preference).isChecked();
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.DISABLE_IMMERSIVE_MESSAGE, checked ? 1:0);
             return true;
         }
-		if (preference == mTapToWake) {
+        if (preference == mTapToWake) {
             return TapToWake.setEnabled(mTapToWake.isChecked());
         }
 
