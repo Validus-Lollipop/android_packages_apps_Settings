@@ -72,7 +72,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     /** If there is no setting in the provider, use this. */
     private static final int FALLBACK_SCREEN_TIMEOUT_VALUE = 30000;
 	
-	private static final String KEY_DISPLAY_ROTATION = "display_rotation";
+    private static final String KEY_DISPLAY_ROTATION = "display_rotation";
     private static final String KEY_SCREEN_TIMEOUT = "screen_timeout";
     private static final String KEY_FONT_SIZE = "font_size";
     private static final String KEY_SCREEN_SAVER = "screensaver";
@@ -80,10 +80,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_DOZE = "doze";
     private static final String KEY_AUTO_BRIGHTNESS = "auto_brightness";
     private static final String KEY_AUTO_ROTATE = "auto_rotate";
-	private static final String KEY_NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
-	private static final String DISABLE_IMMERSIVE_MESSAGE = "disable_immersive_message";
+    private static final String KEY_NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
+    private static final String DISABLE_IMMERSIVE_MESSAGE = "disable_immersive_message";
     private static final String KEY_TAP_TO_WAKE = "double_tap_wake_gesture";
-	private static final String KEY_TOAST_ANIMATION = "toast_animation";
+    private static final String KEY_TOAST_ANIMATION = "toast_animation";
 
     private static final String CATEGORY_ADVANCED = "advanced_display_prefs";
 
@@ -107,10 +107,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private SwitchPreference mLiftToWakePreference;
     private SwitchPreference mDozePreference;
     private SwitchPreference mAutoBrightnessPreference;
-	private ListPreference mNavigationBarHeight;
+    private ListPreference mNavigationBarHeight;
     private SwitchPreference mTapToWake;
-	private ListPreference mToastAnimation;
-	private SwitchPreference mDisableIM;
+    private ListPreference mToastAnimation;
+    private SwitchPreference mDisableIM;
 
     private ContentObserver mAccelerometerRotationObserver =
             new ContentObserver(new Handler()) {
@@ -150,6 +150,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 Settings.System.NAVIGATION_BAR_HEIGHT, 48);
         mNavigationBarHeight.setValue(String.valueOf(statusNavigationBarHeight));
         mNavigationBarHeight.setSummary(mNavigationBarHeight.getEntry());
+        
         mToastAnimation = (ListPreference) prefSet.findPreference(KEY_TOAST_ANIMATION);
         mToastAnimation.setSummary(mToastAnimation.getEntry());
         int CurrentToastAnimation = Settings.System.getInt(
