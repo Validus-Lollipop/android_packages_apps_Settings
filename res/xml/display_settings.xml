@@ -47,12 +47,12 @@
                 android:defaultValue="48"
                 android:persistent="false" />	
 
-		<ListPreference
-				android:key="toast_animation"
-				android:title="@string/toast_animation_title"
-				android:entries="@array/toast_animation_entries"
-				android:entryValues="@array/toast_animation_values"
-				android:persistent="false" />
+	<ListPreference
+		android:key="toast_animation"
+		android:title="@string/toast_animation_title"
+		android:entries="@array/toast_animation_entries"
+		android:entryValues="@array/toast_animation_values"
+		android:persistent="false" />
 				
         <SwitchPreference
                 android:key="disable_immersive_message"
