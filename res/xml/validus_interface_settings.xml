@@ -35,6 +35,7 @@
     <PreferenceScreen
         android:id="@+id/listview"
         android:fragment="com.android.settings.validus.Listview"
-        android:title="@string/listview_category" />
+        android:title="@string/listview_category"
+		android:icon="@drawable/ic_settings_listview" />
 		
 </PreferenceScreen>
