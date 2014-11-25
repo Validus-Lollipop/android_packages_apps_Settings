@@ -18,7 +18,35 @@
                   xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
         android:title="@string/display_settings"
         settings:keywords="@string/keywords_display">
+		
+        <PreferenceCategory
+            android:key="category_validus_options"
+            android:title="@string/display_category_validus_options_title" >	
+			
+        <ListPreference
+                android:key="navigation_bar_height"
+                android:dialogTitle="@string/navigation_bar_height"
+                android:title="@string/navigation_bar_height"
+                android:entries="@array/navigation_bar_height_entries"
+                android:entryValues="@array/navigation_bar_height_values"
+                android:defaultValue="48"
+                android:persistent="false" />		
 
+        <SwitchPreference
+                android:key="disable_immersive_message"
+                android:title="@string/disable_immersive_message_title"
+                android:summary="@string/disable_immersive_message_summary"
+                android:persistent="false" />				
+
+		<ListPreference
+				android:key="toast_animation"
+				android:title="@string/toast_animation_title"
+				android:entries="@array/toast_animation_entries"
+				android:entryValues="@array/toast_animation_values"
+				android:persistent="false" />				
+			
+		</PreferenceCategory>
+		
         <PreferenceScreen
                 android:key="brightness"
                 android:title="@string/brightness"
@@ -37,22 +65,6 @@
                 android:key="expanded_desktop"
                 android:title="@string/power_menu_expanded_desktop"
                 android:fragment="com.android.settings.applications.ExpandedDesktopPreferenceFragment" />				
-
-        <ListPreference
-                android:key="navigation_bar_height"
-                android:dialogTitle="@string/navigation_bar_height"
-                android:title="@string/navigation_bar_height"
-                android:entries="@array/navigation_bar_height_entries"
-                android:entryValues="@array/navigation_bar_height_values"
-                android:defaultValue="48"
-                android:persistent="false" />	
-
-		<ListPreference
-				android:key="toast_animation"
-				android:title="@string/toast_animation_title"
-				android:entries="@array/toast_animation_entries"
-				android:entryValues="@array/toast_animation_values"
-				android:persistent="false" />
 				
         <SwitchPreference
                 android:key="disable_immersive_message"
