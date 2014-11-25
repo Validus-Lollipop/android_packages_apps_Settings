@@ -33,4 +33,9 @@
         android:fragment="com.android.settings.validus.fragments.AnimationControls"
 		android:icon="@drawable/ic_settings_aokp" />
 		
+    <PreferenceScreen
+        android:id="@+id/listview"
+        android:fragment="com.android.settings.validus.Listview"
+        android:title="@string/listview_category" />
+		
 </PreferenceScreen>
