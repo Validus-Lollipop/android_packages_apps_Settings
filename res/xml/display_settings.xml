@@ -52,6 +52,13 @@
                 android:key="expanded_desktop"
                 android:title="@string/power_menu_expanded_desktop"
                 android:fragment="com.android.settings.applications.ExpandedDesktopPreferenceFragment" />				
+
+        <EditTextPreference
+                android:key="display_density"
+                android:title="@string/display_density"
+                android:summary="@string/display_density_summary"
+                android:persistent="false"
+                android:inputType="numberSigned" />
 				
         <PreferenceScreen
                 android:key="wallpaper"
