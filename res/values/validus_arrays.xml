@@ -392,9 +392,6 @@
         <item>476</item>
         <item>478</item>
         <item>480</item>
-        <item>504</item>
-        <item>528</item>
-        <item>640</item>		
         <item>@string/custom_density</item>
     </string-array>
 
@@ -410,9 +407,6 @@
         <item>240</item>
         <item>320</item>
         <item>480</item>
-        <item>504</item>
-        <item>528</item>
-        <item>640</item>		
     </string-array>	
 	
     <!-- long press back to kill configurable timeout -->
