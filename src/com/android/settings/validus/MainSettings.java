@@ -40,7 +40,7 @@ import java.util.List;
 
 import com.android.settings.R;
 
-public class CustomSettings extends SettingsPreferenceFragment implements
+public class MainSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String SHOW_CLEAR_ALL_RECENTS = "show_clear_all_recents";
