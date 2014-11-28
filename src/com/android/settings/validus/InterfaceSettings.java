@@ -36,8 +36,7 @@ import com.android.settings.Utils;
 
 import com.android.settings.R;
 
-public class InterfaceSettings extends SettingsPreferenceFragment implements
-        Preference.OnPreferenceChangeListener {
+public class InterfaceSettings extends SettingsPreferenceFragment {
 
     private static final String SHOW_CLEAR_ALL_RECENTS = "show_clear_all_recents";
     private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
