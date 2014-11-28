@@ -102,10 +102,6 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements
         }				
     }
 
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
-        return false;
-    }
-
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         boolean value;
  		return super.onPreferenceTreeClick(preferenceScreen, preference);
