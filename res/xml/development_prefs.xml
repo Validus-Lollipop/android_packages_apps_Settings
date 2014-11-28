@@ -20,6 +20,11 @@
             android:key="bugreport"
             android:title="@*android:string/bugreport_title"
             android:dialogTitle="@*android:string/bugreport_title" /> -->
+						
+    <PreferenceScreen
+        android:key="slimsizer"
+        android:fragment="com.android.settings.validus.SlimSizer"
+        android:title="@string/sizer_title" />
 
     <CheckBoxPreference
         android:key="advanced_reboot"
