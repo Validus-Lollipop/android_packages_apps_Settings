@@ -490,7 +490,8 @@
     <string name="animation_duration_default">Default</string>
     <string name="animation_exit_only_title">Enter only animation</string>
     <string name="animation_reverse_exit_title">Reverse exit animation</string>	
-
+	<string name="aokp_animations_summary">Take control of screen transitions adjusting speed and style</string>
+	
     <string name="header_summary_animation">@null</string>	
     <string name="header_category_personalization">Personalization</string>
 
@@ -557,6 +558,8 @@
     <string name="listview_translate_right">Translate (Right)</string>
 
     <!-- ListView interpolator -->
+	<string name="listview_animations_summary">Customize list animations may cause seizures </string>
+	<string name="animation_settings">Animation Settings</string>
     <string name="listview_interpolator_title">ListView Interpolator</string>
     <string name="listview_accelerate_interpolator">accelerate_interpolator</string>
     <string name="listview_decelerate_interpolator">decelerate_interpolator</string>
@@ -565,6 +568,7 @@
     <string name="listview_overshoot_interpolator">overshoot_interpolator</string>
     <string name="listview_anticipate_overshoot_interpolator">anticipate_overshoot_interpolator</string>
     <string name="listview_bounce_interpolator">bounce_interpolator</string>
+	
 	
 		<!-- App Notification KeyGaurd Settings -->
     <string name="app_notification_show_on_keyguard_title">Show on lockscreen</string>
@@ -608,7 +612,7 @@
 	<string name="status_bar_style_title">Style</string>
 
     <!-- Recents panel settings -->
-	<string name="recents_panel_settings">Recents panel settings</string>
+	<string name="recents_panel_settings">Recents Panel Settings</string>
     <string name="show_clear_all_recents_button_title">Clear all recents button</string>
     <string name="show_clear_all_recents_button_summary">Show clear all button on recents panel</string>
     <string name="recents_clear_all_location_title">Clear all recents location</string>
@@ -621,5 +625,31 @@
 
     <!-- Sound & notification > Sound section: Title for the option defining the default notification ringtone. [CHAR LIMIT=30] -->
     <string name="notification_ringtone_title_cm">Notification ringtone</string>
-	
+
+    <!-- Main list strings -->
+    <string name="performance_settings">Performance</string>	
+
+    <!-- SlimSizer  -->
+    <string name="listsystem">list</string>
+    <string name="sizer_title">System App Remover</string>
+    <string name="caution">Caution!</string>
+    <string name="sizer_message_startup">This tool allows you to delete system apps. Use with caution and only delete apps you know are safe to be removed.</string>
+    <string name="cancel">Cancel</string>
+    <string name="sizer_message_delete">Are you sure you want to delete this app?</string>
+    <string name="sizer_message_delete_multi_one">Are you sure you want to delete selected app?</string>
+    <string name="sizer_message_delete_multi">Are you sure you want to delete selected apps?</string>
+    <string name="btn_delete">Delete selected APPs now!</string>
+    <string name="delete_progress_title">Deleting</string>
+    <string name="delete_progress">Selected files are being deleted, please wait.</string>
+    <string name="delete_success">Deleted</string>
+    <string name="delete_fail">Unable to delete</string>
+    <string name="btn_profile">Profile</string>
+    <string name="sizer_message_sdnowrite">Cannot write to SD Card.</string>
+    <string name="sizer_message_sdnoread">Cannot read SD Card.</string>
+    <string name="sizer_message_filesuccess">Created profile.</string>
+    <string name="sizer_message_filefail">Failed to create profile.</string>
+    <string name="sizer_message_noselect">Nothing selected.</string>
+    <string name="reboot">All done! Reboot your device now.</string>
+    <string name="reboot_ok">Reboot now</string>
+    <string name="reboot_cancel">Don\'t reboot</string>	
 </resources>

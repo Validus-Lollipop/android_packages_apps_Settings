@@ -52,10 +52,10 @@ public class Settings extends SettingsActivity {
         @Override
         public boolean isValidFragment(String className) {
             if (AppOpsSummary.class.getName().equals(className)) {
-                return true;
+                return true;			
             }
             return super.isValidFragment(className);
-            }
+        }   
     }
     public static class StorageUseActivity extends SettingsActivity { /* empty */ }
     public static class DevelopmentSettingsActivity extends SettingsActivity { /* empty */ }
@@ -105,5 +105,6 @@ public class Settings extends SettingsActivity {
     public static class TopLevelSettings extends SettingsActivity { /* empty */ }
     public static class ApnSettingsActivity extends SettingsActivity { /* empty */ }
     public static class BlacklistSettingsActivity extends SettingsActivity { /* empty */ }
+	public static class PerformanceSettingsActivity extends Settings { /* empty */ }
 }
 
