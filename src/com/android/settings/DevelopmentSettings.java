@@ -93,7 +93,8 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
      * Whether to show the development settings to the user.  Default is false.
      */
     public static final String PREF_SHOW = "show";
-
+	
+	private static final String MEDIA_SCANNER_ON_BOOT = "media_scanner_on_boot";
     private static final String ENABLE_ADB = "enable_adb";
     private static final String ADB_NOTIFY = "adb_notify";
 	private static final String ADB_TCPIP = "adb_over_network";
@@ -192,7 +193,8 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private boolean mLastEnabledState;
     private boolean mHaveDebugSettings;
     private boolean mDontPokeProperties;
-
+	
+	private ListPreference mMSOB;
     private CheckBoxPreference mEnableAdb;
     private CheckBoxPreference mAdbNotify;
 	private CheckBoxPreference mAdbOverNetwork;
@@ -415,6 +417,10 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
             mAllPrefs.add(mRootAccess);
         }
 		
+        mMSOB = (ListPreference) findPreference(MEDIA_SCANNER_ON_BOOT);
+        mAllPrefs.add(mMSOB);
+        mMSOB.setOnPreferenceChangeListener(this);
+		
     }
 
     private ListPreference addListPreference(String prefKey) {
@@ -619,6 +625,27 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         updateUSBAudioOptions();
         updateRootAccessOptions();
         updateAdvancedRebootOptions();
+        updateMSOBOptions();
+    }
+
+
+    private void resetMSOBOptions() {
+        Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.MEDIA_SCANNER_ON_BOOT, 0);
+    }
+
+    private void writeMSOBOptions(Object newValue) {
+        Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.MEDIA_SCANNER_ON_BOOT,
+                Integer.valueOf((String) newValue));
+        updateMSOBOptions();
+    }
+
+    private void updateMSOBOptions() {
+        int value = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.MEDIA_SCANNER_ON_BOOT, 0);
+        mMSOB.setValue(String.valueOf(value));
+        mMSOB.setSummary(mMSOB.getEntry());		
     }
 
     private void writeAdvancedRebootOptions() {
@@ -672,6 +699,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         resetDebuggerOptions();
         writeLogdSizeOption(null);
         resetRootAccessOptions();
+		resetMSOBOptions();
         writeAnimationScaleOption(0, mWindowAnimationScale, null);
         writeAnimationScaleOption(1, mTransitionAnimationScale, null);
         writeAnimationScaleOption(2, mAnimatorDurationScale, null);
@@ -1168,6 +1196,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
             if (index >= 0) {
                 // We're using a mode controlled by developer preferences.
                 return true;
+				
             }
         }
         return false;
@@ -1688,6 +1717,9 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
             return true;
         } else if (preference == mKillAppLongpressTimeout) {
             writeKillAppLongpressTimeoutOptions(newValue);
+            return true;
+        } else if (preference == mMSOB) {
+            writeMSOBOptions(newValue);
             return true;			
         } else if (preference == mRootAccess) {
             if ("0".equals(SystemProperties.get(ROOT_ACCESS_PROPERTY, "1"))
