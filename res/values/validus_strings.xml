@@ -663,4 +663,9 @@
     <string name="reboot">All done! Reboot your device now.</string>
     <string name="reboot_ok">Reboot now</string>
     <string name="reboot_cancel">Don\'t reboot</string>	
+	
+   <!-- Battery text setting -->
+    <string name="status_bar_toggle_battery_text">Display battery level</string>
+    <string name="status_bar_toggle_battery_summary">Show battery level next to battery icon</string>
+	
 </resources>

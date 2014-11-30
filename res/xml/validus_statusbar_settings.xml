@@ -6,6 +6,12 @@
         android:key="status_bar_general_category"
         android:title="@string/status_bar_title" >
 		
+    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference	
+        android:key="status_bar_show_battery_text"	
+        android:title="@string/status_bar_toggle_battery_text"	
+        android:summary="@string/status_bar_toggle_battery_summary"	
+        android:defaultValue="false" />		
+		
         <PreferenceScreen
             android:fragment="com.android.settings.validus.StatusBarClockStyle"
             android:key="clock_style_pref"
