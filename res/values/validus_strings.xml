@@ -804,4 +804,7 @@
     <string name="media_scanner_on_boot_ask">Ask to scan (notification)</string>
     <string name="media_scanner_on_boot_disabled">Do not scan media</string>
 	
+    <string name="status_bar_toggle_brightness">Brightness control</string>
+    <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across status bar</string>
+    <string name="status_bar_toggle_info">Automatic brightness is enabled</string>	
 </resources>
