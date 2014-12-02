@@ -191,17 +191,17 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mTapToWake = null;
         }
 
-        mDisplayDensity = (EditTextPreference) findPreference(KEY_DISPLAY_DENSITY);
-        mDisplayDensity.setText(SystemProperties.get(PROP_DISPLAY_DENSITY, "0"));
-        mDisplayDensity.setOnPreferenceChangeListener(this);		
-    }
-	
         boolean proximityCheckOnWait = getResources().getBoolean(
                 com.android.internal.R.bool.config_proximityCheckOnWake);
         if (!proximityCheckOnWait) {
             advancedPrefs.removePreference(findPreference(KEY_PROXIMITY_WAKE));
             Settings.System.putInt(getContentResolver(), Settings.System.PROXIMITY_ON_WAKE, 1);
-        }
+        }		
+		
+        mDisplayDensity = (EditTextPreference) findPreference(KEY_DISPLAY_DENSITY);
+        mDisplayDensity.setText(SystemProperties.get(PROP_DISPLAY_DENSITY, "0"));
+        mDisplayDensity.setOnPreferenceChangeListener(this);		
+    }
 
     private static boolean allowAllRotations(Context context) {
         return Resources.getSystem().getBoolean(
