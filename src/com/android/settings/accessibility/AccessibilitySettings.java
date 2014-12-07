@@ -273,19 +273,7 @@ public class AccessibilitySettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (mToggleLargeTextPreference == preference) {
-            handleToggleLargeTextPreferenceClick();
-            return true;
-        } else if (mToggleHighTextContrastPreference == preference) {
-            handleToggleTextContrastPreferenceClick();
-            return true;
-        } else if (mToggleLockScreenRotationPreference == preference) {
-            handleLockScreenRotationPreferenceClick();
-            return true;
-        } else if (mToggleSpeakPasswordPreference == preference) {
-            handleToggleSpeakPasswordPreferenceClick();
-            return true;
-        } else if (mGlobalGesturePreferenceScreen == preference) {
+        if (mGlobalGesturePreferenceScreen == preference) {
             handleToggleEnableAccessibilityGesturePreferenceClick();
             return true;
         } else if (mDisplayMagnificationPreferenceScreen == preference) {

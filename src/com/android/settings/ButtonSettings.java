@@ -92,8 +92,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private ListPreference mHomeDoubleTapAction;
     private ListPreference mMenuPressAction;
     private ListPreference mMenuLongPressAction;
-    private ListPreference mVolumeKeyCursorControl;
-    private CheckBoxPreference mDisableNavigationKeys;
     private CheckBoxPreference mPowerEndCall;
     private CheckBoxPreference mHomeAnswerCall;
 
